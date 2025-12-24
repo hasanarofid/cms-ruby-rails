@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SewasController < ApplicationController
   before_action :set_sewa, only: %i[ show edit update destroy ]
 

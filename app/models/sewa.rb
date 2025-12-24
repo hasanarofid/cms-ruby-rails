@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Sewa < ApplicationRecord
   belongs_to :kasur
   belongs_to :penyewa

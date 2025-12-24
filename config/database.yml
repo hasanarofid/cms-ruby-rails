@@ -2,13 +2,13 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password: hasanitki
-  host: localhost
+  username: <%= ENV.fetch("DB_USERNAME") { "root" } %>
+  password: <%= ENV.fetch("DB_PASSWORD") { "hasanitki" } %>
+  host: <%= ENV.fetch("DB_HOST") { "localhost" } %>
 
 development:
   <<: *default
-  database: sewakasur_development
+  database: <%= ENV.fetch("DB_NAME") { "sewakasur_development" } %>
 
 test:
   <<: *default
@@ -16,5 +16,5 @@ test:
 
 production:
   <<: *default
-  database: sewakasur_production
+  database: <%= ENV.fetch("DB_NAME") { "sewakasur_production" } %>
 

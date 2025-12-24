@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Penyewa < ApplicationRecord
   has_many :sewas, dependent: :destroy
   

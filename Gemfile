@@ -6,6 +6,8 @@ gem "rails", "~> 8.1.1"
 gem "propshaft"
 # Use mysql as the database for Active Record
 gem "mysql2", "~> 0.5"
+# Use dotenv for environment variables
+gem "dotenv-rails", groups: [:development, :test]
 # gem "sqlite3", ">= 2.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"

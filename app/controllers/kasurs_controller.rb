@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class KasursController < ApplicationController
   before_action :set_kasur, only: %i[ show edit update destroy ]
 
