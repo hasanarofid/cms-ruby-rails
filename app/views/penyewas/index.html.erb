@@ -1,0 +1,34 @@
+<div class="card">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h1 style="color: var(--skm-blue);">Data Penyewa</h1>
+    <%= link_to "Tambah Penyewa Baru", new_penyewa_path, class: "btn btn-primary" %>
+  </div>
+
+  <div id="penyewas" class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Alamat</th>
+          <th>Telepon</th>
+          <th>Identitas</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @penyewas.each do |penyewa| %>
+          <tr>
+            <td><%= penyewa.nama %></td>
+            <td><%= truncate(penyewa.alamat, length: 50) %></td>
+            <td><%= penyewa.nomor_telepon %></td>
+            <td><%= penyewa.identitas %></td>
+            <td>
+              <%= link_to "Detail", penyewa, style: "color: var(--skm-blue); margin-right: 10px;" %>
+              <%= link_to "Edit", edit_penyewa_path(penyewa), style: "color: var(--skm-blue);" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

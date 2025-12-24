@@ -1,0 +1,42 @@
+<div class="card">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h1 style="color: var(--skm-blue);">Data Penyewaan</h1>
+    <%= link_to "Tambah Sewa Baru", new_sewa_path, class: "btn btn-primary" %>
+  </div>
+
+  <div id="sewas" class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Kasur</th>
+          <th>Penyewa</th>
+          <th>Mulai</th>
+          <th>Selesai</th>
+          <th>Total Harga</th>
+          <th>Status</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @sewas.each do |sewa| %>
+          <tr>
+            <td><%= sewa.kasur.nama %></td>
+            <td><%= sewa.penyewa.nama %></td>
+            <td><%= sewa.tanggal_mulai %></td>
+            <td><%= sewa.tanggal_selesai %></td>
+            <td><%= number_to_currency(sewa.total_harga, unit: "Rp ", separator: ",", delimiter: ".") %></td>
+            <td>
+              <span style="padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; background: <%= sewa.status == 'Aktif' ? '#cce5ff' : '#eee' %>; color: <%= sewa.status == 'Aktif' ? '#004085' : '#666' %>;">
+                <%= sewa.status %>
+              </span>
+            </td>
+            <td>
+              <%= link_to "Detail", sewa, style: "color: var(--skm-blue); margin-right: 10px;" %>
+              <%= link_to "Edit", edit_sewa_path(sewa), style: "color: var(--skm-blue);" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,2 @@
+module KasursHelper
+end

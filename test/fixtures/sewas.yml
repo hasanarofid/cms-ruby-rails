@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kasur: one
+  penyewa: one
+  tanggal_mulai: 2025-12-24
+  tanggal_selesai: 2025-12-24
+  total_harga: 9.99
+  status: MyString
+
+two:
+  kasur: two
+  penyewa: two
+  tanggal_mulai: 2025-12-24
+  tanggal_selesai: 2025-12-24
+  total_harga: 9.99
+  status: MyString

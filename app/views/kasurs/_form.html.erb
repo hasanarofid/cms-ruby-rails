@@ -1,0 +1,37 @@
+<%= form_with(model: kasur) do |form| %>
+  <% if kasur.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(kasur.errors.count, "error") %> prohibited this kasur from being saved:</h2>
+
+      <ul>
+        <% kasur.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nama, style: "display: block" %>
+    <%= form.text_field :nama %>
+  </div>
+
+  <div>
+    <%= form.label :deskripsi, style: "display: block" %>
+    <%= form.textarea :deskripsi %>
+  </div>
+
+  <div>
+    <%= form.label :harga_per_hari, style: "display: block" %>
+    <%= form.text_field :harga_per_hari %>
+  </div>
+
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @sewa %>
+
+<div>
+  <%= link_to "Edit this sewa", edit_sewa_path(@sewa) %> |
+  <%= link_to "Back to sewas", sewas_path %>
+
+  <%= button_to "Destroy this sewa", @sewa, method: :delete %>
+</div>

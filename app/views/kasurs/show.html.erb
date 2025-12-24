@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @kasur %>
+
+<div>
+  <%= link_to "Edit this kasur", edit_kasur_path(@kasur) %> |
+  <%= link_to "Back to kasurs", kasurs_path %>
+
+  <%= button_to "Destroy this kasur", @kasur, method: :delete %>
+</div>

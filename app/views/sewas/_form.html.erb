@@ -1,0 +1,47 @@
+<%= form_with(model: sewa) do |form| %>
+  <% if sewa.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(sewa.errors.count, "error") %> prohibited this sewa from being saved:</h2>
+
+      <ul>
+        <% sewa.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :kasur_id, style: "display: block" %>
+    <%= form.text_field :kasur_id %>
+  </div>
+
+  <div>
+    <%= form.label :penyewa_id, style: "display: block" %>
+    <%= form.text_field :penyewa_id %>
+  </div>
+
+  <div>
+    <%= form.label :tanggal_mulai, style: "display: block" %>
+    <%= form.date_field :tanggal_mulai %>
+  </div>
+
+  <div>
+    <%= form.label :tanggal_selesai, style: "display: block" %>
+    <%= form.date_field :tanggal_selesai %>
+  </div>
+
+  <div>
+    <%= form.label :total_harga, style: "display: block" %>
+    <%= form.text_field :total_harga %>
+  </div>
+
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

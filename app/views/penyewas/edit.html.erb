@@ -1,0 +1,12 @@
+<% content_for :title, "Editing penyewa" %>
+
+<h1>Editing penyewa</h1>
+
+<%= render "form", penyewa: @penyewa %>
+
+<br>
+
+<div>
+  <%= link_to "Show this penyewa", @penyewa %> |
+  <%= link_to "Back to penyewas", penyewas_path %>
+</div>

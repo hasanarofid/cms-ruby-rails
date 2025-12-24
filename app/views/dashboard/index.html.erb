@@ -1,0 +1,57 @@
+<div class="card">
+  <h1 style="color: var(--skm-blue);">Dashboard Admin</h1>
+  <p>Selamat datang di panel administrasi <strong>skm MALANG</strong>.</p>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 2rem;">
+    <div class="card" style="background: var(--skm-yellow); color: var(--skm-blue); text-align: center;">
+      <h3>Total Kasur</h3>
+      <div style="font-size: 2.5rem; font-weight: bold;"><%= Kasur.count %></div>
+      <%= link_to "Kelola Kasur", kasurs_path, class: "btn btn-primary", style: "margin-top: 1rem;" %>
+    </div>
+    
+    <div class="card" style="background: var(--skm-blue); color: white; text-align: center;">
+      <h3>Penyewa Aktif</h3>
+      <div style="font-size: 2.5rem; font-weight: bold;"><%= Penyewa.count %></div>
+      <%= link_to "Kelola Penyewa", penyewas_path, class: "btn btn-yellow", style: "margin-top: 1rem;" %>
+    </div>
+    
+    <div class="card" style="background: #eee; color: var(--skm-blue); text-align: center;">
+      <h3>Transaksi Sewa</h3>
+      <div style="font-size: 2.5rem; font-weight: bold;"><%= Sewa.count %></div>
+      <%= link_to "Lihat Sewa", sewas_path, class: "btn btn-primary", style: "margin-top: 1rem;" %>
+    </div>
+  </div>
+
+  <div style="margin-top: 3rem;">
+    <h2 style="color: var(--skm-blue);">Penyewaan Terbaru</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+        <tr>
+          <th>Kasur</th>
+          <th>Penyewa</th>
+          <th>Mulai</th>
+          <th>Selesai</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% Sewa.order(created_at: :desc).limit(5).each do |sewa| %>
+          <tr>
+            <td><%= sewa.kasur.nama %></td>
+            <td><%= sewa.penyewa.nama %></td>
+            <td><%= sewa.tanggal_mulai %></td>
+            <td><%= sewa.tanggal_selesai %></td>
+            <td><%= sewa.status %></td>
+          </tr>
+        <% end %>
+        <% if Sewa.none? %>
+          <tr>
+            <td colspan="5" style="text-align: center; padding: 2rem;">Belum ada data penyewaan.</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="card">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h1 style="color: var(--skm-blue);">Data Kasur</h1>
+    <%= link_to "Tambah Kasur Baru", new_kasur_path, class: "btn btn-primary" %>
+  </div>
+
+  <div id="kasurs" class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Deskripsi</th>
+          <th>Harga/Hari</th>
+          <th>Status</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @kasurs.each do |kasur| %>
+          <tr>
+            <td><%= kasur.nama %></td>
+            <td><%= truncate(kasur.deskripsi, length: 50) %></td>
+            <td><%= number_to_currency(kasur.harga_per_hari, unit: "Rp ", separator: ",", delimiter: ".") %></td>
+            <td>
+              <span style="padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; background: <%= kasur.status == 'Tersedia' ? '#d4edda' : '#f8d7da' %>; color: <%= kasur.status == 'Tersedia' ? '#155724' : '#721c24' %>;">
+                <%= kasur.status %>
+              </span>
+            </td>
+            <td>
+              <%= link_to "Detail", kasur, style: "color: var(--skm-blue); margin-right: 10px;" %>
+              <%= link_to "Edit", edit_kasur_path(kasur), style: "color: var(--skm-blue);" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

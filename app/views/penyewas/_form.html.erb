@@ -1,0 +1,37 @@
+<%= form_with(model: penyewa) do |form| %>
+  <% if penyewa.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(penyewa.errors.count, "error") %> prohibited this penyewa from being saved:</h2>
+
+      <ul>
+        <% penyewa.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nama, style: "display: block" %>
+    <%= form.text_field :nama %>
+  </div>
+
+  <div>
+    <%= form.label :alamat, style: "display: block" %>
+    <%= form.textarea :alamat %>
+  </div>
+
+  <div>
+    <%= form.label :nomor_telepon, style: "display: block" %>
+    <%= form.text_field :nomor_telepon %>
+  </div>
+
+  <div>
+    <%= form.label :identitas, style: "display: block" %>
+    <%= form.text_field :identitas %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

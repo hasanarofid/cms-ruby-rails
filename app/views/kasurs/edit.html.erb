@@ -1,0 +1,12 @@
+<% content_for :title, "Editing kasur" %>
+
+<h1>Editing kasur</h1>
+
+<%= render "form", kasur: @kasur %>
+
+<br>
+
+<div>
+  <%= link_to "Show this kasur", @kasur %> |
+  <%= link_to "Back to kasurs", kasurs_path %>
+</div>

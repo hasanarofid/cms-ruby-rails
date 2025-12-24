@@ -1,0 +1,12 @@
+<% content_for :title, "Editing sewa" %>
+
+<h1>Editing sewa</h1>
+
+<%= render "form", sewa: @sewa %>
+
+<br>
+
+<div>
+  <%= link_to "Show this sewa", @sewa %> |
+  <%= link_to "Back to sewas", sewas_path %>
+</div>

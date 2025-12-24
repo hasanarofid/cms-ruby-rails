@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @penyewa %>
+
+<div>
+  <%= link_to "Edit this penyewa", edit_penyewa_path(@penyewa) %> |
+  <%= link_to "Back to penyewas", penyewas_path %>
+
+  <%= button_to "Destroy this penyewa", @penyewa, method: :delete %>
+</div>
