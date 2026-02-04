@@ -108,6 +108,9 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     dotenv (3.2.0)
+    dotenv-rails (3.2.0)
+      dotenv (= 3.2.0)
+      railties (>= 6.1)
     drb (2.2.3)
     ed25519 (1.4.0)
     erb (6.0.1)
@@ -339,9 +342,9 @@ GEM
       railties (>= 6.0.0)
     stringio (3.2.0)
     thor (1.4.0)
-    thruster (0.1.17)
-    thruster (0.1.17-aarch64-linux)
-    thruster (0.1.17-x86_64-linux)
+    thruster (0.1.18)
+    thruster (0.1.18-aarch64-linux)
+    thruster (0.1.18-x86_64-linux)
     timeout (0.6.0)
     tsort (0.2.0)
     turbo-rails (2.0.20)
@@ -384,6 +387,7 @@ DEPENDENCIES
   bundler-audit
   capybara
   debug
+  dotenv-rails
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
